@@ -1,16 +1,25 @@
 'use client';
 
 import { Localize } from '@deriv-com/translations';
+import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="w-full py-1 text-center">
+    <footer className="flex w-full items-center justify-center gap-3 py-1 text-center">
       <p className="text-xs tracking-wide text-muted-foreground">
         <Localize i18n_default_text="Powered by" />{' '}
         <span className="font-semibold text-foreground">
           <Localize i18n_default_text="Deriv" />
         </span>
       </p>
+      <span aria-hidden="true" className="h-3 w-px bg-border" />
+      <Link href="/contact" className="text-xs font-medium text-foreground underline-offset-2 hover:underline">
+        <Localize i18n_default_text="Contact" />
+      </Link>
+      <span aria-hidden="true" className="h-3 w-px bg-border" />
+      <Link href="/bookings" className="text-xs font-medium text-foreground underline-offset-2 hover:underline">
+        <Localize i18n_default_text="Bookings" />
+      </Link>
     </footer>
   );
 }
